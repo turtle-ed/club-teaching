@@ -1,0 +1,34 @@
+#initializing variables
+inputnum = 0
+sum = 0
+numbers = 0
+list = []
+
+#filling list, and getting sum
+while True:
+  inputnum = input("input a number, or enter \"stop\" to stop: ")
+  #check if input is stop
+  if inputnum.lower() == "stop":
+    if numbers == 0:
+      #prevent div 0
+      numbers += 1
+    break;
+  else:
+    try:
+      #add item to list
+      list.append(float(inputnum))
+
+      #add number to sum
+      sum += float(inputnum)
+
+      #count entries in list
+      numbers += 1
+    except:
+      #checks for invalid input
+      print("invalid input")
+
+#find the average
+avg = sum/numbers
+
+print(f"the average is {avg}")
+print(f"your number(s) were {list}")
